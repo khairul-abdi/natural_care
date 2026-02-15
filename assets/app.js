@@ -12,12 +12,13 @@ fetch("assets/products.json")
         }
 
         products.forEach((p, i) => {
-
+            console.log("MASUKK : ", i);
+            
             const col = document.createElement("div");
             col.className = "col-12 col-sm-6 col-lg-4";
 
             // build carousel markup
-            const placeholder = 'https://via.placeholder.com/400x300?text=No+Image';
+            const placeholder = 'assets/placeholder400x400p.png';
             let imgs = [];
             if (Array.isArray(p.images) && p.images.length) {
                 imgs = p.images.slice();
@@ -86,7 +87,8 @@ fetch("assets/products.json")
     });
 
 function openModal(product) {
-
+    console.log("product: ", product);
+    
     modalBody.innerHTML = `
         <div class="ratio ratio-16x9 mb-3">
             <iframe id="ytVideo"
