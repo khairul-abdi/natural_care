@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif
+}
+
+body {
+    background: #f8fbf9;
+    color: #333;
+    transition: 0.3s;
+}
+
+/* dark mode toggles the "dark" class on <body> */
+body.dark {
+    background: #111;
+    color: #fff;
+}
+
+/* other elements that need adaptation */
+body.dark .navbar,
+body.dark .bg-white {
+    background: #1a1a1a !important;
+}
+
+body.dark .navbar-brand .brand-title,
+body.dark .navbar-brand .logo-img {
+    color: #fff;
+}
+
+body.dark .bg-light {
+    background: #1a1a1a !important;
+}
+
+body.dark .text-muted {
+    color: #bbb !important;
+}
+
+body.dark .card {
+    background: #222;
+}
+
+body.dark .modal-content {
+    background: #222;
+}
+
+body.dark .btn-outline-dark {
+    color: #fff;
+    border-color: #fff;
+}
+
+body.dark .btn-outline-dark:hover {
+    background: #fff;
+    color: #000;
+}
+
+
+/* keep both selectors for backwards compatibility with inline JS */
+
+/* navbar-brand adjustments */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+/* tighten spacing between logo and title */
+.navbar-brand .logo-img {
+    /* slight negative value to bring text even closer */
+    margin-right: -0.25rem;
+}
+
+/* larger brand text when needed */
+.navbar-brand .brand-title {
+    font-size: 1.75rem; /* roughly equivalent to h3 */
+    font-weight: 600;
+}
+
+/* spacing between logo and text is already provided by me-2 on the img */
+
+/* product-card animation (moved from inline style) */
+.product-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.4s ease;
+}
+.product-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* carousel styling for product cards */
+.carousel {
+    background: #f5f5f5;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-inner {
+    aspect-ratio: 1 / 1;  /* square ratio to fit 800x800 images perfectly */
+    background: #f5f5f5;
+    max-width: 100%;
+}
+
+@media (min-width: 576px) {
+    .carousel-inner {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel-inner {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel-inner {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+.carousel-item img {
+    height: 100%;
+    object-fit: contain;  /* show entire image without cropping */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+}
+
+
+/* floating whatsapp button fallback styling */
+.wa-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+}
+
+body.dark header {
+    background: #1a1a1a;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.card .card-body {
+    /* padding: 12px; */
+}
+
+.card .card-title {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.card .card-text {
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+}
+
+.card .d-flex {
+    gap: 8px;
+}
+
+.card.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+body.dark .card {
+    background: #222;
+}
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+/* custom shopee button color */
+.btn-shopee {
+    background-color: #ff681c;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.btn-shopee:hover,
+.btn-shopee:focus {
+    background-color: #e55a0f;
+    color: white;
+    box-shadow: 0 2px 8px rgba(255, 104, 28, 0.4);
+}
+
+body.dark .btn-shopee {
+    background-color: #ff681c;
+    color: white;
+}
+
+body.dark .btn-shopee:hover,
+body.dark .btn-shopee:focus {
+    background-color: #e55a0f;
+    color: white;
+}
+
+/* Bootstrap handles modal display and centering; remove custom overrides that conflict */
+
+/* if you want to tweak the modal content look, adjust the following: */
+.modal-content {
+    background: #fff;
+    width: 95%;
+    max-width: 800px;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        width: 90%;
+        max-width: 900px;
+    }
+}
+
+body.dark .modal-content {
+    background: #222;
+}
+
+/* dark-mode card text contrast */
+body.dark .card,
+body.dark .card .card-title,
+body.dark .card-text {
+    color: #fff;
+}
+
+@media(min-width:768px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.logo-img {
+    /* base size bumped for larger appearance */
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .logo-img {
+        height: 90px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .logo-img {
+        height: 100px;
+    }
+}
+
+.detail-text {
+    white-space: pre-line;
+    line-height: 1.6;
+}
