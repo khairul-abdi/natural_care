@@ -85,8 +85,6 @@ fetch("assets/products.json")
     });
 
 function openModal(product) {
-    console.log("product: ", product);
-    
     modalBody.innerHTML = `
         <div class="ratio ratio-16x9 mb-3">
             <iframe id="ytVideo"
