@@ -26,6 +26,8 @@ body.dark .bg-white {
 body.dark .navbar-brand .brand-title,
 body.dark .navbar-brand .logo-img {
     color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 body.dark .bg-light {
@@ -54,7 +56,6 @@ body.dark .btn-outline-dark:hover {
     color: #000;
 }
 
-
 /* keep both selectors for backwards compatibility with inline JS */
 
 /* navbar-brand adjustments */
@@ -65,13 +66,19 @@ body.dark .btn-outline-dark:hover {
 
 /* tighten spacing between logo and title */
 .navbar-brand .logo-img {
-    /* slight negative value to bring text even closer */
-    margin-right: -0.25rem;
+    margin-right: 0.5rem;
+}
+
+/* kecilkan tombol dark mode di HP */
+#darkToggle {
+    padding: 6px 10px;
+    font-size: 14px;
 }
 
 /* larger brand text when needed */
 .navbar-brand .brand-title {
-    font-size: 1.75rem; /* roughly equivalent to h3 */
+    font-size: 2.5rem;
+    /* roughly equivalent to h3 */
     font-weight: 600;
 }
 
@@ -83,6 +90,7 @@ body.dark .btn-outline-dark:hover {
     transform: translateY(20px);
     transition: 0.4s ease;
 }
+
 .product-card.show {
     opacity: 1;
     transform: translateY(0);
@@ -98,7 +106,8 @@ body.dark .btn-outline-dark:hover {
 }
 
 .carousel-inner {
-    aspect-ratio: 1 / 1;  /* square ratio to fit 800x800 images perfectly */
+    aspect-ratio: 1 / 1;
+    /* square ratio to fit 800x800 images perfectly */
     background: #f5f5f5;
     max-width: 100%;
 }
@@ -123,12 +132,13 @@ body.dark .btn-outline-dark:hover {
 
 .carousel-item img {
     height: 100%;
-    object-fit: contain;  /* show entire image without cropping */
+    object-fit: contain;
+    /* show entire image without cropping */
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
 }
 
 
@@ -143,7 +153,7 @@ body.dark .btn-outline-dark:hover {
     border-radius: 50%;
     font-size: 20px;
     text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
 }
 
 
@@ -273,24 +283,46 @@ body.dark .card-text {
     }
 }
 
+/* =========================
+   NAVBAR MOBILE FIRST FIX
+========================= */
+
+/* Default = MOBILE */
 .logo-img {
-    /* base size bumped for larger appearance */
-    height: 80px;
+    height: 40px;
+    /* lebih kecil untuk HP */
     width: auto;
     object-fit: contain;
 }
 
-/* Tablet */
+/* =========================
+   TABLET
+========================= */
 @media (min-width: 768px) {
     .logo-img {
-        height: 90px;
+        height: 60px;
+    }
+
+     .navbar-brand .brand-title {
+        font-size: 1.8rem;
+    }
+
+    #darkToggle {
+        padding: 8px 14px;
+        font-size: 16px;
     }
 }
 
-/* Desktop */
+/* =========================
+   DESKTOP
+========================= */
 @media (min-width: 1200px) {
     .logo-img {
-        height: 100px;
+        height: 80px;
+    }
+
+    .navbar-brand .brand-title {
+        font-size: 2rem;
     }
 }
 
