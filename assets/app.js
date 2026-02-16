@@ -12,8 +12,6 @@ fetch("assets/products.json")
         }
 
         products.forEach((p, i) => {
-            console.log("MASUKK : ", i);
-            
             const col = document.createElement("div");
             col.className = "col-12 col-sm-6 col-lg-4";
 
